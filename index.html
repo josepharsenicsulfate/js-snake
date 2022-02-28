@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snek</title>
+
+    <script src="./game.js" defer type="module"></script>
+</head>
+
+<style>
+    body{
+        margin: 0;
+
+        height: 100vh;
+        width: 100vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #cccccc;
+    }
+
+    #game-board{
+        height: 100vmin;
+        width: 100vmin;
+
+        display: grid;
+        grid-template-columns: repeat(21, 1fr);
+        grid-template-rows: repeat(21, 1fr);
+
+        background-color: #101010;
+        border-left: 1vmin solid #b80b0b;
+        border-right: 1vmin solid #b80b0b;
+    }
+
+    .snake{
+        background-color: #cccccc;
+        border: 0.25vmin solid #101010 ;
+    }
+
+    .food{
+        background-color: #b80b0b;
+        border: 0.25vmin solid #cccccc;
+    }
+</style>
+
+<body>
+    <div id="game-board"></div>
+</body>
+</html>
