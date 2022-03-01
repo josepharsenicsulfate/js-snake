@@ -1,12 +1,11 @@
 import { moveInput } from './input.js'
 
 let snake = [
-                {x: 10, y: 11},
                 {x: 11, y: 11}
             ]
 
 export function update(){
-    const currMove = moveInput()
+    let currMove = moveInput()
 
     for (let i = snake.length - 2; i >= 0; i--){
         snake[i + 1] = { ...snake[i] }
@@ -26,4 +25,29 @@ export function draw(gameBoard){
 
         gameBoard.appendChild(snakeElement)
     }
+}
+
+export function onSnake(position, { ignoreHead = false } = {}){
+    return snake.some((segment, index) => {
+        if (ignoreHead && index === 0) return false
+        return equalPositions(segment, position)
+    })
+}
+
+export function growSnake(rate){
+    for (let i = 1; i < rate; i++){
+        snake.push({ ...snake[snake.length - 1 ]})
+    }
+}
+
+export function snakeIntersection(){
+    return onSnake(snake[0], { ignoreHead: true})
+}
+
+export function getSnakeHead(){
+    return snake[0]
+}
+
+function equalPositions(pos1, pos2){
+    return (pos1.x === pos2.x && pos1.y === pos2.y)
 }
