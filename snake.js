@@ -36,7 +36,7 @@ export function onSnake(position, { ignoreHead = false } = {}){
 
 export function growSnake(rate){
     for (let i = 1; i < rate; i++){
-        snake.push({ ...snake[snake.length - 1 ]})
+        snake.push({ ...snake[snake.length]})
     }
 }
 
