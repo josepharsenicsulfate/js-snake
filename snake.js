@@ -1,18 +1,26 @@
 import { moveInput } from './input.js'
 
 let snake = [
-                {x: 11, y: 11}
+                {x: 11, y: 10},
+                {x: 11, y: 11},
+                {x: 11, y: 12}
             ]
 
 export function update(){
+    console.log(snake)
     let currMove = moveInput()
 
-    for (let i = snake.length - 2; i >= 0; i--){
-        snake[i + 1] = { ...snake[i] }
+    if(currMove.x != 0 || currMove.y != 0){
+        for (let i = snake.length-1; i > 0; i--){
+            snake[i] = snake[i-1]
+        }
     }
-
+    
     snake[0].x += currMove.x
     snake[0].y += currMove.y
+
+    console.log(snake)
+    console.log(snake.length);
 }
 
 export function draw(gameBoard){
@@ -35,7 +43,7 @@ export function onSnake(position, { ignoreHead = false } = {}){
 }
 
 export function growSnake(rate){
-    for (let i = 1; i < rate; i++){
+    for (let i = 1; i <= rate; i++){
         snake.push({ ...snake[snake.length]})
     }
 }

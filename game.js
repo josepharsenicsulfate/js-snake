@@ -3,7 +3,7 @@ import { draw as drawFood, update as updateFood, outsideGrid } from './food.js'
 
 let gameBoard = document.getElementById('game-board')
 let gameOver = false
-const gameSpeed = 50  // milliseconds
+const gameSpeed = 1000  // milliseconds
 
 function gameLoop(){
     update()
