@@ -1,7 +1,7 @@
 import { moveInput } from './input.js'
 
 let snake = [
-                {x: 11, y: 10}
+                {x: 11, y: 11}
             ]
 
 export function update(){

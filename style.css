@@ -2,18 +2,14 @@
 
 body{
     margin: 0;
-    width: 100vw;
-    height: 100vh;
     background-color: #cccccc;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     font-family: 'Poppins', sans-serif;
 }
 
 .main{
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,7 +82,7 @@ p span{
 #game-over p{
     text-transform: uppercase; 
     color: #b80b0b;
-    background-color: #ccc;
+    background-color: rgba(204,204,204,0.8);
     text-align: center; 
     font-size: 54px; 
     position: relative;  
@@ -112,6 +108,20 @@ p span{
 
 .food{
     background-color: #b80b0b;
+}
+
+#kek{
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('kek.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 @keyframes fadein{

@@ -33,6 +33,8 @@ function gameLoop(){
 
         button.classList.remove('disable')
         button.removeAttribute('disabled')
+
+        document.getElementById('kek').style.opacity = '1'
     }
 }
 
