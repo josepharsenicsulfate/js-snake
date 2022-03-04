@@ -1,13 +1,15 @@
 import { onSnake, growSnake } from './snake.js'
+import { modifySpeed } from './game.js'
 
 let GRID_SIZE = 21
 let food = getFoodRandomPosition()
-const rate = 1
+const rate = 5
 
 export function update(){
     if(onSnake(food)){
         growSnake(rate)
         food = getFoodRandomPosition()
+        modifySpeed(15)
     }
 }
 

@@ -8,16 +8,19 @@
 
     <script src="./game.js" defer type="module"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/60b39ed68f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="main">
         <div class="container info">
-            <p>Use the arrows keys to guide the snake and do your best not to hit the edge of the map or any part of the snake's body</p>
+            <p>Use the arrows keys <span>🡠🡡🡢🡣</span> to guide the snake and do your best not to hit the <span>edge</span> of the map or any part of the snake's <span>body</span></p>
+            <p>Score: <span id="score"></span></p>
+            <button onclick="location.reload()">retry</button>
         </div>
-
         <div class="container game">
             <div id="game-board"></div>
+            <div id="game-over hide"></div>
         </div>
     </div>
     

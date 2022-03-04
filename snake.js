@@ -1,26 +1,18 @@
 import { moveInput } from './input.js'
 
 let snake = [
-                {x: 11, y: 10},
-                {x: 11, y: 11},
-                {x: 11, y: 12}
+                {x: 11, y: 10}
             ]
 
 export function update(){
-    console.log(snake)
     let currMove = moveInput()
 
-    if(currMove.x != 0 || currMove.y != 0){
-        for (let i = snake.length-1; i > 0; i--){
-            snake[i] = snake[i-1]
-        }
+    for (let i = snake.length - 2; i >= 0; i--){
+        snake[i + 1] = { ...snake[i] }
     }
-    
+
     snake[0].x += currMove.x
     snake[0].y += currMove.y
-
-    console.log(snake)
-    console.log(snake.length);
 }
 
 export function draw(gameBoard){
@@ -54,6 +46,10 @@ export function snakeIntersection(){
 
 export function getSnakeHead(){
     return snake[0]
+}
+
+export function getSnakeLength(){
+    return snake.length
 }
 
 function equalPositions(pos1, pos2){
