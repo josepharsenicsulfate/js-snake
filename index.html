@@ -16,11 +16,11 @@
         <div class="container info">
             <p>Use the arrows keys <span>🡠🡡🡢🡣</span> to guide the snake and do your best not to hit the <span>edge</span> of the map or any part of the snake's <span>body</span></p>
             <p>Score: <span id="score"></span></p>
-            <button onclick="location.reload()">retry</button>
+            <button id="button" class="disable" onclick="location.reload()" disabled>retry</button>
         </div>
         <div class="container game">
             <div id="game-board"></div>
-            <div id="game-over hide"></div>
+            <div id="game-over" class="hide"><p>you died</p></div>
         </div>
     </div>
     

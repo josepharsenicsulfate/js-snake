@@ -3,7 +3,8 @@ import { draw as drawFood, update as updateFood, outsideGrid } from './food.js'
 
 let gameBoard = document.getElementById('game-board')
 let scoreDisplay = document.getElementById('score')
-let gameOverMsg = document.getElementById('game-over hide')
+let button = document.getElementById('button')
+let gameOverMsg = document.getElementById('game-over')
 let gameOver = false
 let score = 0
 
@@ -27,9 +28,11 @@ function gameLoop(){
         score = getSnakeLength()
         scoreDisplay.innerHTML = score
     }else{
-        gameOverMsg.innerHTML = "you died"
         gameOverMsg.classList.remove('hide')
         gameOverMsg.classList.add('show')
+
+        button.classList.remove('disable')
+        button.removeAttribute('disabled')
     }
 }
 
